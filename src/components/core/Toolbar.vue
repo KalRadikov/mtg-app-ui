@@ -101,9 +101,9 @@
 
         <v-list-group v-if="admin" prepend-icon="mdi-lock" no-action>
           <v-list-item slot="activator" class="pl-0">
-            <v-list-item-content>{{
-              $t('adminItems.ADMIN')
-            }}</v-list-item-content>
+            <v-list-item-content>
+              {{ $t('adminItems.ADMIN') }}
+            </v-list-item-content>
           </v-list-item>
           <v-list-item
             v-for="(item, index) in adminItems"
@@ -122,9 +122,9 @@
           <v-list-item-action>
             <v-icon>mdi-exit-to-app</v-icon>
           </v-list-item-action>
-          <v-list-item-content>
-            {{ $t('menuItems.LOGOUT') }}
-          </v-list-item-content>
+          <v-list-item-content>{{
+            $t('menuItems.LOGOUT')
+          }}</v-list-item-content>
         </v-list-item>
 
         <v-list-item>
@@ -226,6 +226,12 @@ export default {
             title: this.$t('menuItems.HOME'),
             link: 'home',
             icon: 'mdi-home',
+            class: 'btnHome'
+          },
+          {
+            title: this.$t('menuItems.DECK_BUILDER'),
+            link: 'deck-builder',
+            icon: 'mdi-cube-outline',
             class: 'btnHome'
           },
           {
