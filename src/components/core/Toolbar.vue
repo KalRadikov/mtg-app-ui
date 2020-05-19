@@ -229,6 +229,12 @@ export default {
             class: 'btnHome'
           },
           {
+            title: this.$t('menuItems.PLAY'),
+            link: 'play',
+            icon: 'mdi-google-controller',
+            class: 'btnHome'
+          },
+          {
             title: this.$t('menuItems.DECK_BUILDER'),
             link: 'deck-builder',
             icon: 'mdi-cube-outline',

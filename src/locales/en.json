@@ -52,6 +52,7 @@
     "HOME": "Home",
     "ABOUT": "About",
     "MY_PROFILE": "My Profile",
+    "PLAY": "Play",
     "DECK_BUILDER": "Deck Builder",
     "SIGNUP": "Sign Up",
     "LOGIN": "Login",
@@ -118,6 +119,14 @@
     "VERIFY_YOUR_ACCOUNT": "IMPORTANT: Verify your account",
     "VERIFY_YOUR_ACCOUNT_DESCRIPTION": "You must verify your account by clicking the link sent to your E-mail to be able to enjoy all our app features",
     "CLOSE": "Close"
+  },
+  "play": {
+    "TITLE": "Play MTG",
+    "DESCRIPTION": "This page is privately available"
+  },
+  "deckBuilder": {
+    "TITLE": "The Brewery",
+    "DESCRIPTION": "This page is privately available"
   },
   "about": {
     "TITLE": "About",

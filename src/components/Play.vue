@@ -1,8 +1,8 @@
 <template>
   <v-container fluid>
     <v-layout row wrap>
-      <Heading :title="$t('deckBuilder.TITLE')" />
-      <Description :description="$t('deckBuilder.DESCRIPTION')" />
+      <Heading :title="$t('play.TITLE')" />
+      <Description :description="$t('play.DESCRIPTION')" />
       <div class="text-center">
         <v-dialog v-model="showVerifyDialog" width="500" persistent>
           <v-card>
