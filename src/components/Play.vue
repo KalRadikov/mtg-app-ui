@@ -3,6 +3,7 @@
     <v-layout row wrap>
       <Heading :title="$t('play.TITLE')" />
       <Description :description="$t('play.DESCRIPTION')" />
+      <BlockGame />
       <div class="text-center">
         <v-dialog v-model="showVerifyDialog" width="500" persistent>
           <v-card>
@@ -38,7 +39,9 @@
 </template>
 
 <script>
+import BlockGame from './BlockGame.vue'
 export default {
+  components: { BlockGame },
   metaInfo() {
     return {
       title: this.$store.getters.appTitle,

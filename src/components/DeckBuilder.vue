@@ -2,7 +2,6 @@
   <v-container fluid>
     <v-layout row wrap>
       <Heading :title="$t('deckBuilder.TITLE')" />
-      <Description :description="$t('deckBuilder.DESCRIPTION')" />
       <div class="text-center">
         <v-dialog v-model="showVerifyDialog" width="500" persistent>
           <v-card>
