@@ -12,25 +12,22 @@ Socketio.on('connection', (socket) => {
   socket.on('move', (data) => {
     switch (data) {
       case 'left':
-        position.x -= 5
+        position.x -= 20
         Socketio.emit('position', position)
         break
-    }
-    switch (data) {
+
       case 'right':
-        position.x += 5
+        position.x += 20
         Socketio.emit('position', position)
         break
-    }
-    switch (data) {
+
       case 'up':
-        position.y -= 5
+        position.y -= 20
         Socketio.emit('position', position)
         break
-    }
-    switch (data) {
+
       case 'down':
-        position.y += 5
+        position.y += 20
         Socketio.emit('position', position)
         break
     }
@@ -38,5 +35,5 @@ Socketio.on('connection', (socket) => {
 })
 
 Http.listen(3001, () => {
-  console.log('listening at :3001...')
+  console.info('listening at :3001...')
 })

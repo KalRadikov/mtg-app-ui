@@ -3,7 +3,10 @@
     <v-layout row wrap>
       <Heading :title="$t('play.TITLE')" />
       <Description :description="$t('play.DESCRIPTION')" />
-      <BlockGame />
+      <!-- <BlockGame /> -->
+      <!-- <DragDrop /> -->
+      <Hand />
+      <Battlefield />
       <div class="text-center">
         <v-dialog v-model="showVerifyDialog" width="500" persistent>
           <v-card>
@@ -40,8 +43,12 @@
 
 <script>
 import BlockGame from './BlockGame.vue'
+import DragDrop from './DragDrop.vue'
+import Hand from './Hand.vue'
+import Battlefield from './Battlefield.vue'
 export default {
-  components: { BlockGame },
+  // eslint-disable-next-line vue/no-unused-components
+  components: { BlockGame, DragDrop, Hand, Battlefield },
   metaInfo() {
     return {
       title: this.$store.getters.appTitle,
