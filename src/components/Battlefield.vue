@@ -7,7 +7,25 @@
     </div>
 
     <div class="col-6">
-      <h3>Field</h3>
+      <h3>Battlefield</h3>
+      <draggable
+        class="list-group"
+        tag="ul"
+        v-model="list"
+        v-bind="dragOptions"
+        @start="drag = true"
+        @end="drag = false"
+      >
+        <transition-group type="transition" :name="!drag ? 'flip-list' : null">
+          <li
+            class="list-group-item"
+            v-for="element in list"
+            :key="element.order"
+          >
+            <img :src="element.uri" />
+          </li>
+        </transition-group>
+      </draggable>
       <draggable
         class="list-group"
         tag="ul"
@@ -29,28 +47,19 @@
               @click="element.fixed = !element.fixed"
               aria-hidden="true"
             ></i>
-            {{ element.name }}
+            <img :src="element.uri" />
           </li>
         </transition-group>
       </draggable>
     </div>
 
-    <rawDisplayer class="col-3" :value="list" title="List" />
+    <!-- <rawDisplayer class="col-3" :value="list" title="List" /> -->
   </div>
 </template>
 
 <script>
 import draggable from 'vuedraggable'
-const message = [
-  'vue.draggable',
-  'draggable',
-  'component',
-  'for',
-  'vue.js 2.0',
-  'based',
-  'on',
-  'Sortablejs'
-]
+import { mapGetters, mapActions, mapState } from 'vuex'
 export default {
   name: 'transition-example-2',
   display: 'Transitions',
@@ -60,18 +69,21 @@ export default {
   },
   data() {
     return {
-      list: message.map((name, index) => {
-        return { name, order: index + 1 }
-      }),
+      list: [],
       drag: false
     }
   },
   methods: {
+    ...mapActions(['fetchExampleCards']),
     sort() {
       this.list = this.list.sort((a, b) => a.order - b.order)
     }
   },
   computed: {
+    ...mapGetters(['exampleCards']),
+    ...mapState({
+      cardList: (state) => state.exampleCards
+    }),
     dragOptions() {
       return {
         animation: 200,
@@ -79,6 +91,12 @@ export default {
         disabled: false,
         ghostClass: 'ghost'
       }
+    }
+  },
+  watch: {
+    cardList(newValue, oldValue) {
+      console.log(oldValue)
+      this.list = newValue
     }
   }
 }
